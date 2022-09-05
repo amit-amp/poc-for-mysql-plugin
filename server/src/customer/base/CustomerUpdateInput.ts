@@ -12,9 +12,8 @@ https://docs.amplication.com/docs/how-to/custom-code
 import { InputType, Field } from "@nestjs/graphql";
 import { ApiProperty } from "@nestjs/swagger";
 import { AddressWhereUniqueInput } from "../../address/base/AddressWhereUniqueInput";
-import { ValidateNested, IsOptional, IsEnum, IsString } from "class-validator";
+import { ValidateNested, IsOptional, IsString } from "class-validator";
 import { Type } from "class-transformer";
-import { EnumCustomerAnimal } from "./EnumCustomerAnimal";
 import { OrderUpdateManyWithoutCustomersInput } from "./OrderUpdateManyWithoutCustomersInput";
 @InputType()
 class CustomerUpdateInput {
@@ -29,20 +28,6 @@ class CustomerUpdateInput {
     nullable: true,
   })
   address?: AddressWhereUniqueInput | null;
-
-  @ApiProperty({
-    required: false,
-    enum: EnumCustomerAnimal,
-    isArray: true,
-  })
-  @IsEnum(EnumCustomerAnimal, {
-    each: true,
-  })
-  @IsOptional()
-  @Field(() => [EnumCustomerAnimal], {
-    nullable: true,
-  })
-  animal?: Array<"Dog" | "Cat" | "Bird">;
 
   @ApiProperty({
     required: false,

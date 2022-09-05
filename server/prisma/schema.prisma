@@ -32,17 +32,16 @@ model Order {
 }
 
 model Customer {
-  address   Address?             @relation(fields: [addressId], references: [id])
+  address   Address? @relation(fields: [addressId], references: [id])
   addressId String?
-  animal    EnumCustomerAnimal[]
-  createdAt DateTime             @default(now())
+  createdAt DateTime @default(now())
   email     String?
   firstName String?
-  id        String               @id @default(cuid())
+  id        String   @id @default(cuid())
   lastName  String?
   orders    Order[]
   phone     String?
-  updatedAt DateTime             @updatedAt
+  updatedAt DateTime @updatedAt
 }
 
 model Address {
@@ -66,12 +65,6 @@ model Product {
   name        String?
   orders      Order[]
   updatedAt   DateTime          @updatedAt
-}
-
-enum EnumCustomerAnimal {
-  Dog
-  Cat
-  Bird
 }
 
 enum EnumProductColor {

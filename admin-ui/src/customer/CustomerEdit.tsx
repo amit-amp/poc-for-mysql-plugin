@@ -6,9 +6,9 @@ import {
   EditProps,
   ReferenceInput,
   SelectInput,
-  SelectArrayInput,
   TextInput,
   ReferenceArrayInput,
+  SelectArrayInput,
 } from "react-admin";
 
 import { AddressTitle } from "../address/AddressTitle";
@@ -21,17 +21,6 @@ export const CustomerEdit = (props: EditProps): React.ReactElement => {
         <ReferenceInput source="address.id" reference="Address" label="Address">
           <SelectInput optionText={AddressTitle} />
         </ReferenceInput>
-        <SelectArrayInput
-          label="animal"
-          source="animal"
-          choices={[
-            { label: "dog", value: "Dog" },
-            { label: "cat", value: "Cat" },
-            { label: "bird", value: "Bird" },
-          ]}
-          optionText="label"
-          optionValue="value"
-        />
         <TextInput label="Email" source="email" type="email" />
         <TextInput label="First Name" source="firstName" />
         <TextInput label="Last Name" source="lastName" />

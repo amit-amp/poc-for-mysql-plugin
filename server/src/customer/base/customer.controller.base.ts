@@ -65,7 +65,6 @@ export class CustomerControllerBase {
           },
         },
 
-        animal: true,
         createdAt: true,
         email: true,
         firstName: true,
@@ -98,7 +97,6 @@ export class CustomerControllerBase {
           },
         },
 
-        animal: true,
         createdAt: true,
         email: true,
         firstName: true,
@@ -132,7 +130,6 @@ export class CustomerControllerBase {
           },
         },
 
-        animal: true,
         createdAt: true,
         email: true,
         firstName: true,
@@ -183,7 +180,6 @@ export class CustomerControllerBase {
             },
           },
 
-          animal: true,
           createdAt: true,
           email: true,
           firstName: true,
@@ -225,7 +221,6 @@ export class CustomerControllerBase {
             },
           },
 
-          animal: true,
           createdAt: true,
           email: true,
           firstName: true,

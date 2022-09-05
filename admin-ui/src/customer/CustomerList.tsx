@@ -23,7 +23,6 @@ export const CustomerList = (props: ListProps): React.ReactElement => {
         <ReferenceField label="Address" source="address.id" reference="Address">
           <TextField source={ADDRESS_TITLE_FIELD} />
         </ReferenceField>
-        <TextField label="animal" source="animal" />
         <DateField source="createdAt" label="Created At" />
         <TextField label="Email" source="email" />
         <TextField label="First Name" source="firstName" />

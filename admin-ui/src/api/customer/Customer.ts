@@ -3,7 +3,6 @@ import { Order } from "../order/Order";
 
 export type Customer = {
   address?: Address | null;
-  animal?: Array<"Dog" | "Cat" | "Bird">;
   createdAt: Date;
   email: string | null;
   firstName: string | null;
