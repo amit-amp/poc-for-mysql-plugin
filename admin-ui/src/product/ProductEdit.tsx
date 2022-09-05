@@ -4,6 +4,7 @@ import {
   Edit,
   SimpleForm,
   EditProps,
+  SelectInput,
   TextInput,
   NumberInput,
   ReferenceArrayInput,
@@ -16,6 +17,21 @@ export const ProductEdit = (props: EditProps): React.ReactElement => {
   return (
     <Edit {...props}>
       <SimpleForm>
+        <SelectInput
+          source="color"
+          label="color"
+          choices={[
+            { label: "blue", value: "Blue" },
+            { label: "green", value: "Green" },
+            { label: "orange", value: "Orange" },
+            { label: "purple", value: "Purple" },
+            { label: "Yellow", value: "Yellow" },
+            { label: "red", value: "Red" },
+          ]}
+          optionText="label"
+          allowEmpty
+          optionValue="value"
+        />
         <TextInput label="Description" multiline source="description" />
         <NumberInput label="Item Price" source="itemPrice" />
         <TextInput label="Name" source="name" />

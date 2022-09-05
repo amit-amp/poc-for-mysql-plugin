@@ -4,6 +4,7 @@ import { FloatNullableFilter } from "../../util/FloatNullableFilter";
 import { OrderListRelationFilter } from "../order/OrderListRelationFilter";
 
 export type ProductWhereInput = {
+  color?: "Blue" | "Green" | "Orange" | "Purple" | "Yellow" | "Red";
   description?: StringNullableFilter;
   id?: StringFilter;
   itemPrice?: FloatNullableFilter;
