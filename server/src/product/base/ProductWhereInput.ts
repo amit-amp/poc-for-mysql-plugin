@@ -11,14 +11,26 @@ https://docs.amplication.com/docs/how-to/custom-code
   */
 import { InputType, Field } from "@nestjs/graphql";
 import { ApiProperty } from "@nestjs/swagger";
+import { EnumProductColor } from "./EnumProductColor";
+import { IsEnum, IsOptional, ValidateNested } from "class-validator";
 import { StringNullableFilter } from "../../util/StringNullableFilter";
 import { Type } from "class-transformer";
-import { IsOptional, ValidateNested } from "class-validator";
 import { StringFilter } from "../../util/StringFilter";
 import { FloatNullableFilter } from "../../util/FloatNullableFilter";
 import { OrderListRelationFilter } from "../../order/base/OrderListRelationFilter";
 @InputType()
 class ProductWhereInput {
+  @ApiProperty({
+    required: false,
+    enum: EnumProductColor,
+  })
+  @IsEnum(EnumProductColor)
+  @IsOptional()
+  @Field(() => EnumProductColor, {
+    nullable: true,
+  })
+  color?: "Blue" | "Green" | "Orange" | "Purple" | "Yellow" | "Red";
+
   @ApiProperty({
     required: false,
     type: StringNullableFilter,

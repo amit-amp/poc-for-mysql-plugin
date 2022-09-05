@@ -32,16 +32,17 @@ model Order {
 }
 
 model Customer {
-  address   Address? @relation(fields: [addressId], references: [id])
+  address   Address?             @relation(fields: [addressId], references: [id])
   addressId String?
-  createdAt DateTime @default(now())
+  animal    EnumCustomerAnimal[]
+  createdAt DateTime             @default(now())
   email     String?
   firstName String?
-  id        String   @id @default(cuid())
+  id        String               @id @default(cuid())
   lastName  String?
   orders    Order[]
   phone     String?
-  updatedAt DateTime @updatedAt
+  updatedAt DateTime             @updatedAt
 }
 
 model Address {
@@ -57,11 +58,27 @@ model Address {
 }
 
 model Product {
-  createdAt   DateTime @default(now())
+  color       EnumProductColor?
+  createdAt   DateTime          @default(now())
   description String?
-  id          String   @id @default(cuid())
+  id          String            @id @default(cuid())
   itemPrice   Float?
   name        String?
   orders      Order[]
-  updatedAt   DateTime @updatedAt
+  updatedAt   DateTime          @updatedAt
+}
+
+enum EnumCustomerAnimal {
+  Dog
+  Cat
+  Bird
+}
+
+enum EnumProductColor {
+  Blue
+  Green
+  Orange
+  Purple
+  Yellow
+  Red
 }

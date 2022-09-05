@@ -11,9 +11,11 @@ https://docs.amplication.com/docs/how-to/custom-code
   */
 import { InputType, Field } from "@nestjs/graphql";
 import { ApiProperty } from "@nestjs/swagger";
+import { EnumProductColor } from "./EnumProductColor";
 import {
-  IsString,
+  IsEnum,
   IsOptional,
+  IsString,
   IsNumber,
   ValidateNested,
 } from "class-validator";
@@ -21,6 +23,17 @@ import { OrderUpdateManyWithoutProductsInput } from "./OrderUpdateManyWithoutPro
 import { Type } from "class-transformer";
 @InputType()
 class ProductUpdateInput {
+  @ApiProperty({
+    required: false,
+    enum: EnumProductColor,
+  })
+  @IsEnum(EnumProductColor)
+  @IsOptional()
+  @Field(() => EnumProductColor, {
+    nullable: true,
+  })
+  color?: "Blue" | "Green" | "Orange" | "Purple" | "Yellow" | "Red" | null;
+
   @ApiProperty({
     required: false,
     type: String,
