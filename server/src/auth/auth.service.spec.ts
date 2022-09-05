@@ -23,7 +23,7 @@ const USER: any = {
   firstName: "ofek",
   id: "1",
   lastName: "gabay",
-  roles: ["admin"],
+  // roles: ["admin"],
   updatedAt: new Date(),
 };
 
