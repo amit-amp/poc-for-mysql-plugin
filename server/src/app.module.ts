@@ -14,7 +14,6 @@ import { ConfigModule, ConfigService } from "@nestjs/config";
 import { ServeStaticModule } from "@nestjs/serve-static";
 import { ServeStaticOptionsService } from "./serveStaticOptions.service";
 import { GraphQLModule } from "@nestjs/graphql";
-import { RolesMiddleware } from "./middlewares/roles.middleware";
 
 @Module({
   controllers: [],
