@@ -221,7 +221,6 @@ export class AddressControllerBase {
           },
         },
 
-        animal: true,
         createdAt: true,
         email: true,
         firstName: true,
