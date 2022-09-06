@@ -1,4 +1,4 @@
-import { MiddlewareConsumer, Module, NestModule, Scope } from "@nestjs/common";
+import { Module, Scope } from "@nestjs/common";
 import { APP_INTERCEPTOR } from "@nestjs/core";
 import { MorganInterceptor, MorganModule } from "nest-morgan";
 import { UserModule } from "./user/user.module";
