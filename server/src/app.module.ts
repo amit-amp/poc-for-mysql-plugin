@@ -1,4 +1,4 @@
-import { Module, Scope } from "@nestjs/common";
+import { MiddlewareConsumer, Module, NestModule, Scope } from "@nestjs/common";
 import { APP_INTERCEPTOR } from "@nestjs/core";
 import { MorganInterceptor, MorganModule } from "nest-morgan";
 import { UserModule } from "./user/user.module";
@@ -14,6 +14,7 @@ import { ConfigModule, ConfigService } from "@nestjs/config";
 import { ServeStaticModule } from "@nestjs/serve-static";
 import { ServeStaticOptionsService } from "./serveStaticOptions.service";
 import { GraphQLModule } from "@nestjs/graphql";
+import { RolesMiddleware } from "./middlewares/roles.middleware";
 
 @Module({
   controllers: [],
@@ -55,4 +56,8 @@ import { GraphQLModule } from "@nestjs/graphql";
     },
   ],
 })
-export class AppModule {}
+export class AppModule implements NestModule {
+  configure(consumer: MiddlewareConsumer) {
+    consumer.apply(RolesMiddleware).forRoutes("*");
+  }
+}

@@ -24,10 +24,10 @@ Your app is ready to be deployed!
 | Environment          | Description                              | Value                                                       |
 | -------------------- | ---------------------------------------- | ----------------------------------------------------------- |
 | DEBUG_MODE           | Debug level                              | 1                                                           |
-| POSTGRESQL_URL       | Local database connection URL            | postgresql://admin:admin@localhost:5432/\${SERVICE_DB_NAME} |
-| POSTGRESQL_PORT      | Local database port                      | 5432                                                        |
-| POSTGRESQL_USER      | Local database username                  | admin                                                       |
-| POSTGRESQL_PASSWORD  | Local database password                  | admin                                                       |
+DATABASE_URL       | Local database connection URL            | mysql://root:example@localhost:3306/amplication |
+| MYSQL_PORT      | Local database port                      | 5432                                                        |
+| MYSQL_USER      | Local database username                  | admin                                                       |
+| MYSQL_ROOT_PASSWORD  | Local database password                  | admin                                                       |
 | COMPOSE_PROJECT_NAME | Docker Compose project name              | amp\_{applicationId}                                        |
 | SERVER_PORT          | The port that the server is listening to | 3000                                                        |
 | JWT_SECRET_KEY       | JWT secret                               | Change_ME!!!                                                |
